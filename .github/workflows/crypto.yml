@@ -1,0 +1,35 @@
+name: Crypto-overvågning
+
+on:
+  schedule:
+    # Kører hver time, alle dage (crypto handler 24/7)
+    - cron: '0 * * * *'
+  workflow_dispatch: {}   # gør det muligt at trigge manuelt fra "Actions"-fanen
+
+permissions:
+  contents: write
+
+jobs:
+  update-crypto-dashboard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hent repo
+        uses: actions/checkout@v4
+
+      - name: Sæt Python op
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installer afhængigheder
+        run: pip install requests pandas
+
+      - name: Kør crypto-overvågningsscript
+        run: python3 crypto_monitor.py
+
+      - name: Publicer til GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          keep_files: true
