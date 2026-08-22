@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<title>Crypto-overvågning</title>
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: #0f1117;
+        color: #e5e7eb;
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+    h1 { font-size: 22px; margin-bottom: 4px; }
+    .timestamp { color: #9ca3af; font-size: 13px; margin-bottom: 24px; }
+    table { width: 100%; border-collapse: collapse; }
+    th {
+        text-align: left;
+        padding: 10px 12px;
+        border-bottom: 2px solid #374151;
+        color: #9ca3af;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+    td { padding: 12px; border-bottom: 1px solid #1f2937; font-size: 14px; }
+    .coin { display: flex; flex-direction: column; }
+    .symbol { font-weight: 600; }
+    .name { font-size: 12px; color: #9ca3af; }
+    .positive { color: #34d399; }
+    .negative { color: #f87171; }
+    .signals { font-size: 13px; color: #d1d5db; }
+    .alert-high { background: rgba(248, 113, 113, 0.08); border-left: 3px solid #f87171; }
+    .alert-medium { background: rgba(251, 191, 36, 0.06); border-left: 3px solid #fbbf24; }
+    .alert-none { border-left: 3px solid transparent; }
+    .error-row { color: #6b7280; font-style: italic; }
+    .legend { margin-top: 20px; font-size: 12px; color: #6b7280; }
+    .nav { margin-bottom: 20px; font-size: 13px; }
+    .nav a { color: #93c5fd; text-decoration: none; margin-right: 16px; }
+</style>
+</head>
+<body>
+    <div class="nav"><a href="index.html">← Aktie-dashboard</a></div>
+    <h1>🪙 Crypto-overvågning</h1>
+    <div class="timestamp">Sidst opdateret: 22-08-2026 19:40:50</div>
+    <table>
+        <tr>
+            <th>Mønt</th>
+            <th>Pris</th>
+            <th>Ændring (24t)</th>
+            <th>Volumen</th>
+            <th>RSI</th>
+            <th>Signaler</th>
+        </tr>
+        
+        <tr class="alert-high">
+            <td class="coin"><span class="symbol">ETH</span><span class="name">Ethereum</span></td>
+            <td>$2,431.47</td>
+            <td class="positive">+0.00%</td>
+            <td>1.8x</td>
+            <td>82</td>
+            <td class="signals">Volumen 1.8x normalt, RSI overkøbt (82)</td>
+        </tr>
+        <tr class="alert-medium">
+            <td class="coin"><span class="symbol">BTC</span><span class="name">Bitcoin</span></td>
+            <td>$77,356.00</td>
+            <td class="negative">-0.30%</td>
+            <td>1.3x</td>
+            <td>84</td>
+            <td class="signals">RSI overkøbt (84)</td>
+        </tr>
+            <tr class="error-row">
+                <td>SOLANA</td>
+                <td colspan="5">Fejl: 429 Client Error: Too Many Requests for url: https://api.coingecko.com/api/v3/coins/solana/market_chart?vs_currency=usd&days=30&interval=daily</td>
+            </tr>
+            <tr class="error-row">
+                <td>DOGECOIN</td>
+                <td colspan="5">Fejl: 429 Client Error: Too Many Requests for url: https://api.coingecko.com/api/v3/coins/dogecoin/market_chart?vs_currency=usd&days=30&interval=daily</td>
+            </tr>
+            <tr class="error-row">
+                <td>RIPPLE</td>
+                <td colspan="5">Fejl: 429 Client Error: Too Many Requests for url: https://api.coingecko.com/api/v3/coins/ripple/market_chart?vs_currency=usd&days=30&interval=daily</td>
+            </tr>
+            <tr class="error-row">
+                <td>CARDANO</td>
+                <td colspan="5">Fejl: 429 Client Error: Too Many Requests for url: https://api.coingecko.com/api/v3/coins/cardano/market_chart?vs_currency=usd&days=30&interval=daily</td>
+            </tr>
+            <tr class="error-row">
+                <td>AVALANCHE-2</td>
+                <td colspan="5">Fejl: 429 Client Error: Too Many Requests for url: https://api.coingecko.com/api/v3/coins/avalanche-2/market_chart?vs_currency=usd&days=30&interval=daily</td>
+            </tr>
+    </table>
+    <div class="legend">
+        🔴 Høj alert (2+ signaler) · 🟡 Medium (1 signal) · Ingen kant = intet signal<br>
+        Tærskler: prisændring ≥ 5.0% (24t) · volumen ≥ 1.8x snit · RSI ≥ 70 eller ≤ 30<br>
+        Data fra CoinGecko · Crypto handler 24/7, så "24t-ændring" er altid et rullende døgn, ikke en handelsdag
+    </div>
+</body>
+</html>
