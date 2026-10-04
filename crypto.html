@@ -42,7 +42,7 @@
 <body>
     <div class="nav"><a href="index.html">← Aktie-dashboard</a></div>
     <h1>🪙 Crypto-overvågning</h1>
-    <div class="timestamp">Sidst opdateret: 04-10-2026 09:34:16</div>
+    <div class="timestamp">Sidst opdateret: 04-10-2026 15:14:45</div>
     <table>
         <tr>
             <th>Mønt</th>
@@ -55,44 +55,32 @@
         
         <tr class="alert-none">
             <td class="coin"><span class="symbol">BTC</span><span class="name">Bitcoin</span></td>
-            <td>$85,245.00</td>
-            <td class="positive">+0.79%</td>
+            <td>$85,278.00</td>
+            <td class="positive">+0.53%</td>
             <td>0.5x</td>
             <td>67</td>
             <td class="signals">—</td>
         </tr>
         <tr class="alert-none">
             <td class="coin"><span class="symbol">ETH</span><span class="name">Ethereum</span></td>
-            <td>$2,702.37</td>
-            <td class="positive">+0.66%</td>
+            <td>$2,697.24</td>
+            <td class="positive">+0.62%</td>
             <td>0.4x</td>
             <td>58</td>
             <td class="signals">—</td>
         </tr>
-        <tr class="alert-none">
-            <td class="coin"><span class="symbol">SOL</span><span class="name">Solana</span></td>
-            <td>$121.16</td>
-            <td class="positive">+1.60%</td>
-            <td>0.5x</td>
-            <td>68</td>
-            <td class="signals">—</td>
-        </tr>
-        <tr class="alert-none">
-            <td class="coin"><span class="symbol">DOGE</span><span class="name">Dogecoin</span></td>
-            <td>$0.0933</td>
-            <td class="positive">+0.70%</td>
-            <td>0.4x</td>
-            <td>59</td>
-            <td class="signals">—</td>
-        </tr>
-        <tr class="alert-none">
-            <td class="coin"><span class="symbol">XRP</span><span class="name">XRP</span></td>
-            <td>$1.50</td>
-            <td class="positive">+1.13%</td>
-            <td>0.3x</td>
-            <td>61</td>
-            <td class="signals">—</td>
-        </tr>
+            <tr class="error-row">
+                <td>SOLANA</td>
+                <td colspan="5">Fejl: 429 Client Error: Too Many Requests for url: https://api.coingecko.com/api/v3/coins/solana/market_chart?vs_currency=usd&days=30&interval=daily</td>
+            </tr>
+            <tr class="error-row">
+                <td>DOGECOIN</td>
+                <td colspan="5">Fejl: 429 Client Error: Too Many Requests for url: https://api.coingecko.com/api/v3/coins/dogecoin/market_chart?vs_currency=usd&days=30&interval=daily</td>
+            </tr>
+            <tr class="error-row">
+                <td>RIPPLE</td>
+                <td colspan="5">Fejl: 429 Client Error: Too Many Requests for url: https://api.coingecko.com/api/v3/coins/ripple/market_chart?vs_currency=usd&days=30&interval=daily</td>
+            </tr>
             <tr class="error-row">
                 <td>CARDANO</td>
                 <td colspan="5">Fejl: 429 Client Error: Too Many Requests for url: https://api.coingecko.com/api/v3/coins/cardano/market_chart?vs_currency=usd&days=30&interval=daily</td>
